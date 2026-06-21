@@ -1,0 +1,80 @@
+/* Bear & Papa's Storybook — warm, calm, read-aloud. Light theme for easy reading
+   on any device (phones, tablets, grandparents' laptops). */
+:root {
+  --bg: #fbf6ec;          /* warm paper */
+  --panel: #ffffff;
+  --ink: #2c2a26;         /* soft near-black */
+  --dim: #6f6a60;
+  --accent: #c8892b;      /* lantern amber */
+  --accent-deep: #9c6512;
+  --line: #ece2cf;
+  --shadow: 0 2px 10px rgba(60, 45, 20, 0.08);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+main { max-width: 760px; margin: 0 auto; padding: 0 20px 64px; }
+
+/* header / footer */
+header.site { text-align: center; padding: 22px 16px 10px; }
+header.site .home { color: var(--accent-deep); font-weight: 700; text-decoration: none; letter-spacing: .2px; }
+header.site .home:hover { color: var(--accent); }
+footer.site { text-align: center; color: var(--dim); font-size: 13px; padding: 40px 16px; }
+
+/* index hero + grid */
+.hero { text-align: center; padding: 18px 0 26px; }
+.hero h1 { font-family: Georgia, "Times New Roman", serif; font-size: 34px; margin: 0 0 6px; color: var(--accent-deep); }
+.hero p { margin: 0; color: var(--dim); font-style: italic; }
+.grid { display: grid; gap: 16px; }
+.card {
+  display: block; background: var(--panel); border: 1px solid var(--line);
+  border-radius: 14px; padding: 18px 20px; text-decoration: none; color: inherit;
+  box-shadow: var(--shadow); transition: transform .12s ease, box-shadow .12s ease;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(60,45,20,.12); }
+.card .date { display: block; color: var(--dim); font-size: 12px; letter-spacing: .4px; text-transform: uppercase; }
+.card .title { display: block; font-family: Georgia, serif; font-size: 22px; color: var(--accent-deep); margin: 2px 0 6px; }
+.card .blurb { display: block; color: var(--ink); }
+.card .meta { display: block; margin-top: 10px; }
+.badge {
+  display: inline-block; background: #fbeccd; color: var(--accent-deep);
+  border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600;
+}
+.badge.text { background: #e9f0e6; color: #4a6a3a; }
+
+/* story page */
+.story .date { color: var(--dim); font-size: 13px; letter-spacing: .4px; text-transform: uppercase; margin: 6px 0 0; }
+.story h1 { font-family: Georgia, serif; font-size: 30px; color: var(--accent-deep); margin: 4px 0 10px; line-height: 1.2; }
+.story .blurb { font-size: 18px; color: var(--dim); font-style: italic; margin: 0 0 22px; }
+.story .note { color: var(--dim); font-size: 14px; }
+
+/* audio player block */
+.player {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+  padding: 14px 18px 18px; box-shadow: var(--shadow); margin: 0 0 26px;
+}
+.player .listen { font-family: Georgia, serif; font-size: 18px; color: var(--accent-deep); margin: 2px 0 12px; }
+.clip { margin: 0 0 12px; }
+.clip:last-child { margin-bottom: 0; }
+.clip figcaption { font-size: 13px; font-weight: 600; color: var(--dim); margin: 0 0 4px; }
+.clip audio { width: 100%; height: 38px; }
+
+/* story text */
+.story-text { font-family: Georgia, "Times New Roman", serif; font-size: 19px; line-height: 1.75; }
+.story-text h2 {
+  font-size: 21px; color: var(--accent-deep); margin: 30px 0 10px;
+  padding-top: 18px; border-top: 1px solid var(--line); font-family: Georgia, serif;
+}
+.story-text p { margin: 0 0 16px; }
+.story-text strong { color: var(--ink); }
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 28px; }
+  .story h1 { font-size: 25px; }
+  .story-text { font-size: 18px; }
+}
